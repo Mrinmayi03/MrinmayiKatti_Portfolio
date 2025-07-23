@@ -64,7 +64,7 @@ export default function Projects() {
         'Tailwind',
       ],
       images: [ccImg1, ccImg2],
-      github: 'https://github.com/Mrinmayi03/ChatBot',
+      github: 'https://github.com/Mrinmayi03/CalmCompanion',
     },
 
     /* 3️⃣  StockSight */
@@ -79,7 +79,7 @@ export default function Projects() {
       ],
       tech: ['Python', 'TensorFlow', 'Streamlit', 'yfinance', 'scikit‑learn'],
       images: [ssImg1, ssImg2],
-      github: 'https://github.com/Mrinmayi03/stock-market-prediction-lstm',
+      github: 'https://github.com/Mrinmayi03/StockSight',
     },
   ];
 
