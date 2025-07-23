@@ -1,30 +1,26 @@
 // src/components/Navbar.tsx
-export default function Navbar() {
-  const links = [
-    'INTRO',
-    'EDUCATION',
-    'EXPERIENCE',
-    'PROJECTS',
-    'SKILLS',
-    'CERTIFICATIONS',
-    'CONTACT',
-  ];
+const links = [
+  'INTRO',
+  'EDUCATION',
+  'EXPERIENCE',
+  'PROJECTS',
+  'SKILLS',
+  'CERTIFICATIONS',
+  'CONTACT',
+];
 
+export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-blue-100 border-b border-blue-300 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* ── Name / brand ────────────────────────────────── */}
-        <span className="text-2xl font-extrabold text-gray-900">
-          Mrinmayi Katti
-        </span>
-
-        {/* ── Navigation links ───────────────────────────── */}
-        <div className="flex flex-wrap gap-6">
+      {/* wrapper keeps bar short */}
+      <div className="px-3 py-2">
+        {/* flex container that scrolls horizontally on very small screens */}
+        <div className="flex gap-6 whitespace-nowrap overflow-x-auto scrollbar-hide">
           {links.map((id) => (
             <a
               key={id}
               href={`#${id.toLowerCase()}`}
-              className="text-lg font-semibold text-blue-900 hover:text-blue-600 tracking-wide"
+              className="text-base md:text-lg font-semibold text-blue-900 hover:text-blue-600 tracking-wide"
             >
               {id}
             </a>
