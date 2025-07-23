@@ -1,40 +1,99 @@
+// src/components/Projects.tsx
 import ProjectCard from './ProjectCard';
-import frenchImg from '../assets/projects/frenchspeechsync/FrenchSpeechSync-1.png';
-import rachelImg from '../assets/projects/calmcompanion/CalmCompanion-1.png';
-import stockImg  from '../assets/projects/stocksight/StockSight-1.png';
-import testVideo from '../assets/projects/frenchspeechsync/youtube_video.mp4';
+
+/* ── FrenchSpeechSync assets ──────────────────────────────── */
+import fsImg1 from '../assets/projects/frenchspeechsync/FrenchSpeechSync-1.png';
+import fsImg2 from '../assets/projects/frenchspeechsync/FrenchSpeechSync-2.png';
+import originalVid from '../assets/projects/frenchspeechsync/youtube_video.mp4';
+import translatedVid from '../assets/projects/frenchspeechsync/FrenchTranslated.mp4';
+
+/* ── Calm Companion assets ───────────────────────────────── */
+import ccImg1 from '../assets/projects/calmcompanion/CalmCompanion-1.png';
+import ccImg2 from '../assets/projects/calmcompanion/CalmCompanion-2.png';
+
+/* ── StockSight assets ───────────────────────────────────── */
+import ssImg1 from '../assets/projects/stocksight/StockSight-1.png';
+import ssImg2 from '../assets/projects/stocksight/StockSight-2.png';
 
 export default function Projects() {
   const projects = [
+    /* 1️⃣  French Speech Sync */
     {
-      title: 'French Speech Sync',
-      description: 'MP4‑to‑French dubbing (Whisper + gTTS + MoviePy).',
-      tech: ['React','FastAPI','AWS S3','Docker'],
-      img: frenchImg,
+      title: 'French Speech Sync',
+      tagline:
+        'AI tool that converts any MP4 into a fully dubbed French video with synced subtitles.',
+      bullets: [
+        'Reduced manual dubbing effort by 90 % on 50+ videos.',
+        'Whisper → transcription & timestamps; gTTS → French speech.',
+        'MoviePy/ffmpeg merge audio + subtitles into final MP4.',
+        'Outputs stored on AWS S3 with presigned download links.',
+      ],
+      tech: [
+        'React',
+        'FastAPI',
+        'Whisper',
+        'gTTS',
+        'MoviePy',
+        'AWS S3',
+        'Docker',
+      ],
+      images: [fsImg1, fsImg2],
+      videos: [
+        { src: originalVid, label: 'Original video' },
+        { src: translatedVid, label: 'French‑dubbed output' },
+      ],
       github: 'https://github.com/Mrinmayi03/FrenchSpeechSync',
-      extraLink: { href: testVideo, label: 'Download test video' },
     },
+
+    /* 2️⃣  Calm Companion */
     {
-      title: 'Rachel Chatbot',
-      description: 'Voice mental‑health assistant (Whisper, GPT‑3.5, ElevenLabs).',
-      tech: ['React','FastAPI','GPT‑3.5','ElevenLabs'],
-      img: rachelImg,
-      github: 'https://github.com/Mrinmayi03/CalmCompanion',
+      title: 'Calm Companion',
+      tagline:
+        'Voice‑enabled mental‑health chatbot that responds with empathetic speech.',
+      bullets: [
+        '98 % STT accuracy via Whisper; ~300 ms response latency.',
+        'GPT‑3.5‑Turbo for conversation logic; ElevenLabs for TTS.',
+        'Built with React 18 + Tailwind and FastAPI backend.',
+      ],
+      tech: [
+        'React',
+        'FastAPI',
+        'Whisper',
+        'GPT‑3.5',
+        'ElevenLabs',
+        'Tailwind',
+      ],
+      images: [ccImg1, ccImg2],
+      github: 'https://github.com/Mrinmayi03/ChatBot',
     },
+
+    /* 3️⃣  StockSight */
     {
-      title: 'Stock Market Predictor',
-      description: 'LSTM forecasting + Streamlit dashboard.',
-      tech: ['Python','TensorFlow','Streamlit','yfinance'],
-      img: stockImg,
-      github: 'https://github.com/Mrinmayi03/StockSight',
+      title: 'StockSight',
+      tagline:
+        'Streamlit dashboard that forecasts stock prices using an LSTM model.',
+      bullets: [
+        'Achieved 92 % directional accuracy on S&P 500 validation set.',
+        'Automated yfinance data ingestion & MinMax scaling.',
+        'Interactive moving‑average charts and error metrics.',
+      ],
+      tech: ['Python', 'TensorFlow', 'Streamlit', 'yfinance', 'scikit‑learn'],
+      images: [ssImg1, ssImg2],
+      github: 'https://github.com/Mrinmayi03/stock-market-prediction-lstm',
     },
   ];
 
   return (
-    <section id="projects" className="py-16 px-6 bg-gray-50">
-      <h2 className="text-2xl font-bold mb-8">Projects</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        {projects.map(p => <ProjectCard key={p.title} {...p} />)}
+    <section id="projects" className="py-20 px-6 bg-gray-900 text-gray-100 border-t-2 border-white-700">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 tracking-tight">
+        Projects
+      </h2>
+
+      {/* stack cards vertically */}
+      <div className="space-y-12">
+        {projects.map((p) => (
+          <ProjectCard key={p.title} {...p} />
+        ))}
       </div>
     </section>
   );
