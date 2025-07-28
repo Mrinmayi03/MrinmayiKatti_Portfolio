@@ -13,6 +13,7 @@ type Props = {
   images: string[];
   videos?: VideoLink[];
   github?: string;
+  LiveDemo?: string;
 };
 
 export default function ProjectCard({
@@ -23,6 +24,7 @@ export default function ProjectCard({
   images,
   videos,
   github,
+  LiveDemo,
 }: Props) {
   return (
     <div className="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
@@ -97,6 +99,16 @@ export default function ProjectCard({
               rel="noreferrer"
             >
               GitHub
+            </a>
+          )}
+          {LiveDemo && (
+            <a
+              href={LiveDemo}
+              target="_blank"
+              className="text-blue-400 underline"
+              rel="noreferrer"
+            >
+              Live Demo
             </a>
           )}
 
