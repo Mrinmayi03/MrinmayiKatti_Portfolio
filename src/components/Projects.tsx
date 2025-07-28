@@ -23,6 +23,32 @@ import sbImg4 from '../assets/projects/steadybloom/SteadyBloom4.png';
 
 export default function Projects() {
   const projects = [
+    {
+      title: 'SteadyBloom',
+      tagline:
+        'Full-stack ADHD care app combining secure software architecture with real-time mood and medication analytics.',
+      bullets: [
+        'Django REST API with JWT auth powers secure task, mood, and medication tracking.',
+        'Integrated data science: mood trend scoring, sentiment analysis, and D3 word clouds.',
+        'Built with React 18 + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.',
+      ],
+      tech: [
+        'React',
+        'TypeScript',
+        'Django REST',
+        'PostgreSQL',
+        'JWT Auth',
+        'Recharts',
+        'D3.js',
+        'Pandas',
+        'Tailwind CSS',
+        'AWS RDS',
+        'Render',
+        'Netlify',
+      ],
+      images: [sbImg1, sbImg2 , sbImg3 , sbImg4],
+      github: 'https://github.com/Mrinmayi03/ADHDCare' ,
+    },
     /* 1️⃣  French Speech Sync */
     {
       title: 'French Speech Sync',
@@ -86,32 +112,6 @@ export default function Projects() {
       tech: ['Python', 'TensorFlow', 'Streamlit', 'yfinance', 'scikit‑learn'],
       images: [ssImg1, ssImg2],
       github: 'https://github.com/Mrinmayi03/StockSight',
-    },
-    {
-      title: 'SteadyBloom',
-      tagline:
-        'Full-stack ADHD care app combining secure software architecture with real-time mood and medication analytics.',
-      bullets: [
-        'Django REST API with JWT auth powers secure task, mood, and medication tracking.',
-        'Integrated data science: mood trend scoring, sentiment analysis, and D3 word clouds.',
-        'Built with React 18 + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.',
-      ],
-      tech: [
-        'React',
-        'TypeScript',
-        'Django REST',
-        'PostgreSQL',
-        'JWT Auth',
-        'Recharts',
-        'D3.js',
-        'Pandas',
-        'Tailwind CSS',
-        'AWS RDS',
-        'Render',
-        'Netlify',
-      ],
-      images: [sbImg1, sbImg2 , sbImg3 , sbImg4],
-      github: 'https://github.com/Mrinmayi03/ADHDCare' ,
     },
   ];
 
