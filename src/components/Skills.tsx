@@ -41,7 +41,7 @@ export default function Skills() {
         Tech Skills
       </h2>
 
-      <div className="grid gap-10 md:grid-cols-2 max-w-5xl">
+      <div className="grid gap-10 md:grid-cols-1 max-w-5xl">
         {skillGroups.map((group) => (
           <div key={group.title}>
             <h3 className="text-xl font-semibold mb-3 text-white/90">
