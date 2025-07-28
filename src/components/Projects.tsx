@@ -47,7 +47,7 @@ export default function Projects() {
         'Netlify',
       ],
       images: [sbImg1, sbImg2 , sbImg3 , sbImg4],
-      github: 'https://github.com/Mrinmayi03/ADHDCare' ,
+      LiveDemo: 'https://steadybloom.netlify.app/' ,
     },
     /* 1️⃣  French Speech Sync */
     {
