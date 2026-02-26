@@ -6,9 +6,9 @@ export default function Experience() {
       title: 'AI/ML Intern',
       period: 'Jun 2024 – Aug 2024',
       bullets: [
-        'Boosted user retention by 18 % via A/B testing & Python analytics.',
-        'Built real‑time dashboards on BigQuery → 40 % faster insights.',
-        'Containerized models with Docker and deployed on AWS EC2.',
+        'Built SQL and Python based data pipelines supporting A/B testing infrastructure, contributing to 18% retention growth.',
+        'Built real-time interactive dashboards in Python, Tableau, and GCP BigQuery, reducing analysis time by 40%.',
+        'Automated experiment metric tracking using SQL queries and batch processing scripts.',
       ],
     },
     {
@@ -19,6 +19,7 @@ export default function Experience() {
         'Improved SQL query efficiency by 35 % and doubled ETL throughput using Spark.',
         'Automated anomaly detection with SAS, R, and MongoDB logging.',
         'Led agile development with Git, Jira, and Docker for reproducible pipelines.',
+        ' Deployed containerized data services on AWS EC2 using Docker for scalable analytics workloads.',
       ],
     },
   ];
