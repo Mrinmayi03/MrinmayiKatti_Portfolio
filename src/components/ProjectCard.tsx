@@ -30,13 +30,10 @@ export default function ProjectCard({
 }: Props) {
   const imgCount = images.length;
 
-  // More compact image sizing (helps SteadyBloom)
+  // Compact heights (specifically reduce 4-image cards)
   const imgHeight =
-    imgCount >= 4 ? 'h-36 md:h-40' : imgCount === 3 ? 'h-40 md:h-44' : 'h-44 md:h-48';
+    imgCount >= 4 ? 'h-28 md:h-32' : imgCount === 3 ? 'h-36 md:h-40' : 'h-40 md:h-44';
 
-  // 1 image -> full width
-  // 2 images -> 2 columns
-  // 3-4 images -> 2 columns but tighter
   const gridCols = imgCount === 1 ? 'grid-cols-1' : 'grid-cols-2';
 
   return (
@@ -44,16 +41,16 @@ export default function ProjectCard({
       <div className={`h-1.5 w-full bg-gradient-to-r ${accent}`} />
 
       {/* Header */}
-      <div className="p-5">
+      <div className="px-5 pt-5 pb-4">
         <h3 className="text-xl md:text-2xl font-semibold text-slate-100">
           {title}
         </h3>
         <p className="mt-1 text-sm md:text-base text-slate-300">{tagline}</p>
       </div>
 
-      {/* Images */}
+      {/* Images (more compact + no forced rounding inside grid) */}
       {images?.length > 0 && (
-        <div className={`grid ${gridCols} gap-2 px-5 pb-5`}>
+        <div className={`grid ${gridCols} gap-2 px-5 pb-4`}>
           {images.slice(0, 4).map((src) => (
             <div
               key={src}
@@ -72,8 +69,8 @@ export default function ProjectCard({
 
       {/* Content */}
       <div className="px-5 pb-5">
-        <ul className="mt-2 space-y-2 text-sm md:text-[15px] text-slate-300">
-          {bullets.map((b) => (
+        <ul className="mt-1 space-y-2 text-sm md:text-[15px] text-slate-300">
+          {bullets.slice(0, 3).map((b) => (
             <li key={b} className="flex gap-2">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
               <span>{b}</span>
@@ -81,12 +78,12 @@ export default function ProjectCard({
           ))}
         </ul>
 
-        {/* Tech chips */}
+        {/* Tech chips (slightly tighter) */}
         <div className="mt-4 flex flex-wrap gap-2">
-          {tech.map((t) => (
+          {tech.slice(0, 12).map((t) => (
             <span
               key={t}
-              className="rounded-full border border-white/10 bg-slate-900/50 px-3 py-1 text-xs text-slate-200"
+              className="rounded-full border border-white/10 bg-slate-900/50 px-3 py-1 text-[11px] text-slate-200"
             >
               {t}
             </span>
@@ -95,7 +92,7 @@ export default function ProjectCard({
 
         {/* Videos */}
         {videos && (
-          <div className="mt-6 space-y-6">
+          <div className="mt-5 space-y-5">
             {videos.map((v) => (
               <div key={v.src} className="space-y-2">
                 <p className="text-xs font-semibold text-slate-300">{v.label}</p>
@@ -140,19 +137,6 @@ export default function ProjectCard({
               Live Demo →
             </a>
           )}
-
-          {videos
-            ?.filter((v) => !v.embed)
-            .map((v) => (
-              <a
-                key={v.src}
-                href={v.src}
-                download
-                className="inline-flex items-center rounded-lg border border-white/10 bg-slate-900/40 px-3 py-2 text-slate-200 hover:border-white/20 hover:bg-slate-900/60"
-              >
-                Download {v.label.toLowerCase()} →
-              </a>
-            ))}
         </div>
       </div>
     </article>
