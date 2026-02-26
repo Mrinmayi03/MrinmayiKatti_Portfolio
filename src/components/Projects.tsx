@@ -1,21 +1,17 @@
 // src/components/Projects.tsx
 import ProjectCard from './ProjectCard';
 
-/* ── FrenchSpeechSync assets ──────────────────────────────── */
 import fsImg1 from '../assets/projects/frenchspeechsync/FrenchSpeechSync-1.png';
 import fsImg2 from '../assets/projects/frenchspeechsync/FrenchSpeechSync-2.png';
 import originalVid from '../assets/projects/frenchspeechsync/youtube_video.mp4';
 import translatedVid from '../assets/projects/frenchspeechsync/FrenchTranslated.mp4';
 
-/* ── Calm Companion assets ───────────────────────────────── */
 import ccImg1 from '../assets/projects/calmcompanion/CalmCompanion-1.png';
 import ccImg2 from '../assets/projects/calmcompanion/CalmCompanion-2.png';
 
-/* ── StockSight assets ───────────────────────────────────── */
 import ssImg1 from '../assets/projects/stocksight/StockSight-1.png';
 import ssImg2 from '../assets/projects/stocksight/StockSight-2.png';
 
-/* ── SteadyBloom assets ───────────────────────────────────── */
 import sbImg1 from '../assets/projects/steadybloom/SteadyBloom1.png';
 import sbImg2 from '../assets/projects/steadybloom/SteadyBloom2.png';
 import sbImg3 from '../assets/projects/steadybloom/SteadyBloom3.png';
@@ -98,13 +94,12 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-slate-950 text-slate-100 border-t border-white/10">
+    <section id="projects" className="py-24 bg-slate-950 text-slate-100">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight">
           Projects
         </h2>
 
-        {/* 2-column grid on desktop, stacked on mobile */}
         <div className="grid gap-8 md:grid-cols-2">
           {projects.map((p) => (
             <ProjectCard key={p.title} {...p} />

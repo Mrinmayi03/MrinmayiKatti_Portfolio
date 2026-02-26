@@ -14,7 +14,7 @@ type Props = {
   videos?: VideoLink[];
   github?: string;
   LiveDemo?: string;
-  accent?: string; // NEW: gradient string like "from-indigo-400/70 to-cyan-400/70"
+  accent?: string;
 };
 
 export default function ProjectCard({
@@ -28,12 +28,22 @@ export default function ProjectCard({
   LiveDemo,
   accent = 'from-indigo-400/60 to-sky-400/60',
 }: Props) {
+  const imgCount = images.length;
+
+  // More compact image sizing (helps SteadyBloom)
+  const imgHeight =
+    imgCount >= 4 ? 'h-36 md:h-40' : imgCount === 3 ? 'h-40 md:h-44' : 'h-44 md:h-48';
+
+  // 1 image -> full width
+  // 2 images -> 2 columns
+  // 3-4 images -> 2 columns but tighter
+  const gridCols = imgCount === 1 ? 'grid-cols-1' : 'grid-cols-2';
+
   return (
     <article className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20 backdrop-blur transition hover:-translate-y-1 hover:border-white/20">
-      {/* Accent strip */}
       <div className={`h-1.5 w-full bg-gradient-to-r ${accent}`} />
 
-      {/* Header (TITLE ABOVE IMAGES) */}
+      {/* Header */}
       <div className="p-5">
         <h3 className="text-xl md:text-2xl font-semibold text-slate-100">
           {title}
@@ -41,19 +51,24 @@ export default function ProjectCard({
         <p className="mt-1 text-sm md:text-base text-slate-300">{tagline}</p>
       </div>
 
-      {/* Screenshots */}
-      <div className="grid grid-cols-2 gap-1 px-5 pb-5">
-        {images.map((src) => (
-          <div key={src} className="overflow-hidden rounded-xl border border-white/10 bg-slate-900/40">
-            <img
-              src={src}
-              alt={`${title} screenshot`}
-              className="h-44 w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
+      {/* Images */}
+      {images?.length > 0 && (
+        <div className={`grid ${gridCols} gap-2 px-5 pb-5`}>
+          {images.slice(0, 4).map((src) => (
+            <div
+              key={src}
+              className="overflow-hidden rounded-xl border border-white/10 bg-slate-900/40"
+            >
+              <img
+                src={src}
+                alt={`${title} screenshot`}
+                className={`${imgHeight} w-full object-cover transition duration-300 group-hover:scale-[1.02]`}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Content */}
       <div className="px-5 pb-5">
@@ -78,7 +93,7 @@ export default function ProjectCard({
           ))}
         </div>
 
-        {/* Optional videos */}
+        {/* Videos */}
         {videos && (
           <div className="mt-6 space-y-6">
             {videos.map((v) => (

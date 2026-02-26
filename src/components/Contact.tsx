@@ -1,63 +1,58 @@
 // src/components/Contact.tsx
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-20 px-6 bg-gray-900 text-gray-100 border-t-2 border-white-700"
-    >
-      {/* ── Heading ─────────────────────────────────────────── */}
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-8">
-        Get in Touch
-      </h2>
+    <section id="contact" className="py-24 bg-slate-950 text-slate-100">
+      <div className="mx-auto max-w-6xl px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight">
+          Get in Touch
+        </h2>
 
-      {/* ── Intro line ─────────────────────────────────────── */}
-      <p className="text-lg text-gray-300 mb-6">
-        I’m open to new‑grad SWE / Data Science opportunities.
-      </p>
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 shadow-lg shadow-black/20 backdrop-blur">
+          <p className="text-slate-300">
+            I’m open to new-grad SWE / Data Science opportunities.
+          </p>
 
-      {/* ── Contact details ───────────────────────────────── */}
-      <div className="space-y-4 text-lg">
-        <p>
-          <span className="font-semibold text-gray-400">Email:</span>{' '}
-          <a
-            href="mailto:mpkatti03@gmail.com"
-            className="font-semibold text-blue-400 hover:underline"
-          >
-            mpkatti03@gmail.com
-          </a>
-        </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 text-slate-200">
+            <div className="rounded-xl border border-white/10 bg-slate-900/40 p-4">
+              <p className="text-sm text-slate-400">Email</p>
+              <a
+                href="mailto:mpkatti03@gmail.com"
+                className="mt-1 inline-block font-medium hover:underline"
+              >
+                mpkatti03@gmail.com
+              </a>
+            </div>
 
-        <p>
-          <span className="font-semibold text-gray-400">LinkedIn:</span>{' '}
-          <a
-            href="https://linkedin.com/in/mrinmayi-p-katti-0a6333248"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-blue-400 hover:underline"
-          >
-            /in/mrinmayi‑p‑katti‑0a6333248
-          </a>
-        </p>
+            <div className="rounded-xl border border-white/10 bg-slate-900/40 p-4">
+              <p className="text-sm text-slate-400">LinkedIn</p>
+              <a
+                href="https://linkedin.com/in/mrinmayi-p-katti-0a6333248"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-1 inline-block font-medium hover:underline"
+              >
+                linkedin.com/in/mrinmayi-p-katti-0a6333248
+              </a>
+            </div>
 
-        <p>
-          <span className="font-semibold text-gray-400">GitHub:</span>{' '}
-          <a
-            href="https://github.com/Mrinmayi03"
-            target="_blank"
-            rel="noreferrer"
-            className="font-semibold text-blue-400 hover:underline"
-          >
-            github.com/Mrinmayi03
-          </a>
-        </p>
-        <p>
-          <span className="font-semibold text-gray-400">Phone Number:</span>{' '}
-          <a
-            className="font-semibold text-blue-400 hover:underline"
-          >
-            +1 862-405-0732
-          </a>
-        </p>
+            <div className="rounded-xl border border-white/10 bg-slate-900/40 p-4">
+              <p className="text-sm text-slate-400">GitHub</p>
+              <a
+                href="https://github.com/Mrinmayi03"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-1 inline-block font-medium hover:underline"
+              >
+                github.com/Mrinmayi03
+              </a>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-slate-900/40 p-4">
+              <p className="text-sm text-slate-400">Phone</p>
+              <p className="mt-1 font-medium">+1 862-405-0732</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
