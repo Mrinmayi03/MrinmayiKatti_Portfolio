@@ -2,6 +2,21 @@
 export default function Experience() {
   const roles = [
     {
+    company: 'Loxo',
+    title: 'Junior Data Engineer',
+    period: 'Sep 2025 – Present',
+    bullets: [
+      'Designed and operated distributed data migration workflows processing 200K+ records per migration with 99%+ data integrity.',
+      'Integrated 7+ external ATS/CRM systems, resolving UUID/type mismatches and schema inconsistencies to reduce reconciliation errors by 30%.',
+      'Engineered reusable job orchestration templates with retry logic, structured logging, and validation layers, reducing manual intervention by 25%.',
+      'Implemented schema normalization and post-migration reconciliation checks to enforce strict data quality SLAs.',
+      'Containerized backend batch workloads with Docker and deployed to Kubernetes for fault-tolerant, production-grade processing.',
+      'Collaborated cross-functionally with product and engineering teams to debug edge cases, improve migration reliability, and optimize runtime performance.',
+      'Maintained observability via structured logs, metrics tracking, and retry patterns to ensure high system resilience.',
+      'Tech Stack: Ruby on Rails, SQL Server, ETL/ELT pipelines, REST APIs, Kubernetes, Docker, Distributed Batch Processing.'
+    ],
+    },
+    {
       company: 'Reliance Jio',
       title: 'AI/ML Intern',
       period: 'Jun 2024 – Aug 2024',
