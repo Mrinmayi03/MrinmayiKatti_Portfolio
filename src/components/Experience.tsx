@@ -30,7 +30,7 @@ export default function Experience() {
     >
       {/* ── Heading ─────────────────────────────────────────── */}
       <h2 className="text-3xl md:text-4xl font-extrabold mb-12">
-        Work Experience
+        Work  Experience
       </h2>
 
       {/* ── Roles ───────────────────────────────────────────── */}
