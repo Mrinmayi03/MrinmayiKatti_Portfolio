@@ -14,7 +14,7 @@ export default function Experience() {
       'Collaborated cross-functionally with product and engineering teams to debug edge cases, improve migration reliability, and optimize runtime performance.',
       'Maintained observability via structured logs, metrics tracking, and retry patterns to ensure high system resilience.',
     ],
-    tech: ['Ruby on Rails', 'SQL Server', 'Kubernetes', 'Docker', 'ETL/ELT', 'REST APIs'],
+    tech: ['Ruby on Rails', 'Python', 'SQL Server', 'Kubernetes', 'Docker', 'ETL/ELT', 'REST APIs'],
     },
     {
       company: 'Reliance Jio',
