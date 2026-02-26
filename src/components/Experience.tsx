@@ -40,31 +40,47 @@ export default function Experience() {
   ];
 
   return (
-    <section
-      id="experience"
-      className="py-20 px-6 bg-gray-900 text-gray-100 border-t-2 border-white-700"
-    >
-      {/* ── Heading ─────────────────────────────────────────── */}
-      <h2 className="text-3xl md:text-4xl font-extrabold mb-12">
-        Work  Experience
-      </h2>
+  <section
+    id="experience"
+    className="py-20 px-6 bg-gray-900 text-gray-100 border-t-2 border-white-700"
+  >
+    {/* ── Heading ─────────────────────────────────────────── */}
+    <h2 className="text-3xl md:text-4xl font-extrabold mb-12">
+      Work Experience
+    </h2>
 
-      {/* ── Roles ───────────────────────────────────────────── */}
-      <div className="space-y-12">
-        {roles.map((r) => (
-          <div key={r.company} className="space-y-3">
-            <h3 className="text-2xl font-semibold text-gray-50">
-              {r.title} — {r.company}
-            </h3>
-            <p className="text-lg text-gray-400">{r.period}</p>
-            <ul className="list-disc ml-6 text-base text-gray-300 space-y-2">
-              {r.bullets.map((b) => (
-                <li key={b}>{b}</li>
+    {/* ── Roles ───────────────────────────────────────────── */}
+    <div className="space-y-12">
+      {roles.map((r) => (
+        <div key={r.company} className="space-y-3">
+          <h3 className="text-2xl font-semibold text-gray-50">
+            {r.title} — {r.company}
+          </h3>
+
+          <p className="text-lg text-gray-400">{r.period}</p>
+
+          <ul className="list-disc ml-6 text-base text-gray-300 space-y-2">
+            {r.bullets.map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
+
+          {/* ✅ Tech stack chips */}
+          {r.tech && (
+            <div className="flex flex-wrap gap-2 pt-3">
+              {r.tech.map((t) => (
+                <span
+                  key={t}
+                  className="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-full border border-gray-700"
+                >
+                  {t}
+                </span>
               ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </section>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
   );
 }
