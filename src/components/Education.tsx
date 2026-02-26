@@ -1,7 +1,7 @@
 // src/components/Education.tsx
 export default function Education() {
   return (
-    <section id="education" className="py-24 bg-slate-950 text-slate-100">
+    <section id="education" className="py-20 px-6 text-slate-100">
       <div className="mx-auto max-w-6xl px-6">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight">
           Education
