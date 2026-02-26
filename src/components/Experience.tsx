@@ -13,8 +13,8 @@ export default function Experience() {
       'Containerized backend batch workloads with Docker and deployed to Kubernetes for fault-tolerant, production-grade processing.',
       'Collaborated cross-functionally with product and engineering teams to debug edge cases, improve migration reliability, and optimize runtime performance.',
       'Maintained observability via structured logs, metrics tracking, and retry patterns to ensure high system resilience.',
-      'Tech Stack: Ruby on Rails, SQL Server, ETL/ELT pipelines, REST APIs, Kubernetes, Docker, Distributed Batch Processing.'
     ],
+    tech: ['Ruby on Rails', 'SQL Server', 'Kubernetes', 'Docker', 'ETL/ELT', 'REST APIs'],
     },
     {
       company: 'Reliance Jio',
