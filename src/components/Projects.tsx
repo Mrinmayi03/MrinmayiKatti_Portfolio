@@ -30,7 +30,7 @@ export default function Projects() {
       bullets: [
         'Django REST API with JWT auth powers secure task, mood, and medication tracking.',
         'Integrated data science: mood trend scoring, sentiment analysis, and D3 word clouds.',
-        'Built with React 18 + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.',
+        'Built with React 18 + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.',
       ],
       tech: [
         'React',
@@ -46,86 +46,70 @@ export default function Projects() {
         'Render',
         'Netlify',
       ],
-      images: [sbImg1, sbImg2 , sbImg3 , sbImg4],
-      LiveDemo: 'https://steadybloom.netlify.app/' ,
+      images: [sbImg1, sbImg2, sbImg3, sbImg4],
+      LiveDemo: 'https://steadybloom.netlify.app/',
+      accent: 'from-fuchsia-400/70 to-indigo-400/70',
     },
-    /* 1️⃣  French Speech Sync */
     {
-      title: 'French Speech Sync',
+      title: 'French Speech Sync',
       tagline:
         'AI tool that converts any MP4 into a fully dubbed French video with synced subtitles.',
       bullets: [
-        'Reduced manual dubbing effort by 90 % on 50+ videos.',
+        'Reduced manual dubbing effort by 90% on 50+ videos.',
         'Whisper → transcription & timestamps; gTTS → French speech.',
         'MoviePy/ffmpeg merge audio + subtitles into final MP4.',
-        'Outputs stored on AWS S3 with presigned download links.',
+        'Outputs stored on AWS S3 with presigned download links.',
       ],
-      tech: [
-        'React',
-        'FastAPI',
-        'Whisper',
-        'gTTS',
-        'MoviePy',
-        'AWS S3',
-        'Docker',
-      ],
+      tech: ['React', 'FastAPI', 'Whisper', 'gTTS', 'MoviePy', 'AWS S3', 'Docker'],
       images: [fsImg1, fsImg2],
       videos: [
         { src: originalVid, label: 'Original video' },
-        { src: translatedVid, label: 'French‑dubbed output' },
+        { src: translatedVid, label: 'French-dubbed output' },
       ],
       github: 'https://github.com/Mrinmayi03/FrenchSpeechSync',
+      accent: 'from-indigo-400/70 to-cyan-400/70',
     },
-
-    /* 2️⃣  Calm Companion */
     {
-      title: 'Calm Companion',
-      tagline:
-        'Voice‑enabled mental‑health chatbot that responds with empathetic speech.',
+      title: 'Calm Companion',
+      tagline: 'Voice-enabled mental-health chatbot that responds with empathetic speech.',
       bullets: [
-        '98 % STT accuracy via Whisper; ~300 ms response latency.',
-        'GPT‑3.5‑Turbo for conversation logic; ElevenLabs for TTS.',
-        'Built with React 18 + Tailwind and FastAPI backend.',
+        '98% STT accuracy via Whisper; ~300ms response latency.',
+        'GPT-3.5-Turbo for conversation logic; ElevenLabs for TTS.',
+        'Built with React 18 + Tailwind and FastAPI backend.',
       ],
-      tech: [
-        'React',
-        'FastAPI',
-        'Whisper',
-        'GPT‑3.5',
-        'ElevenLabs',
-        'Tailwind',
-      ],
+      tech: ['React', 'FastAPI', 'Whisper', 'GPT-3.5', 'ElevenLabs', 'Tailwind'],
       images: [ccImg1, ccImg2],
       github: 'https://github.com/Mrinmayi03/CalmCompanion',
+      accent: 'from-emerald-400/70 to-lime-400/70',
     },
-
-    /* 3️⃣  StockSight */
     {
       title: 'StockSight',
-      tagline:
-        'Streamlit dashboard that forecasts stock prices using an LSTM model.',
+      tagline: 'Streamlit dashboard that forecasts stock prices using an LSTM model.',
       bullets: [
-        'Achieved 92 % directional accuracy on S&P 500 validation set.',
+        'Achieved 92% directional accuracy on S&P 500 validation set.',
         'Automated yfinance data ingestion & MinMax scaling.',
-        'Interactive moving‑average charts and error metrics.',
+        'Interactive moving-average charts and error metrics.',
       ],
-      tech: ['Python', 'TensorFlow', 'Streamlit', 'yfinance', 'scikit‑learn'],
+      tech: ['Python', 'TensorFlow', 'Streamlit', 'yfinance', 'scikit-learn'],
       images: [ssImg1, ssImg2],
       github: 'https://github.com/Mrinmayi03/StockSight',
+      accent: 'from-amber-400/70 to-orange-400/70',
     },
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gray-900 text-gray-100 border-t-2 border-white-700">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-12 tracking-tight">
-        Projects
-      </h2>
+    <section id="projects" className="py-24 bg-slate-950 text-slate-100 border-t border-white/10">
+      <div className="mx-auto max-w-6xl px-6">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight">
+          Projects
+        </h2>
 
-      {/* stack cards vertically */}
-      <div className="space-y-12">
-        {projects.map((p) => (
-          <ProjectCard key={p.title} {...p} />
-        ))}
+        {/* 2-column grid on desktop, stacked on mobile */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {projects.map((p) => (
+            <ProjectCard key={p.title} {...p} />
+          ))}
+        </div>
       </div>
     </section>
   );
