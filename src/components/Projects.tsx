@@ -1,102 +1,103 @@
 // src/components/Projects.tsx
-import ProjectCard from './ProjectCard';
+import ProjectCard from "./ProjectCard";
 
-import fsImg1 from '../assets/projects/frenchspeechsync/FrenchSpeechSync-1.png';
-import fsImg2 from '../assets/projects/frenchspeechsync/FrenchSpeechSync-2.png';
-import originalVid from '../assets/projects/frenchspeechsync/youtube_video.mp4';
-import translatedVid from '../assets/projects/frenchspeechsync/FrenchTranslated.mp4';
+import fsImg1 from "../assets/projects/frenchspeechsync/FrenchSpeechSync-1.png";
+import fsImg2 from "../assets/projects/frenchspeechsync/FrenchSpeechSync-2.png";
+import originalVid from "../assets/projects/frenchspeechsync/youtube_video.mp4";
+import translatedVid from "../assets/projects/frenchspeechsync/FrenchTranslated.mp4";
 
-import ccImg1 from '../assets/projects/calmcompanion/CalmCompanion-1.png';
-import ccImg2 from '../assets/projects/calmcompanion/CalmCompanion-2.png';
+import ccImg1 from "../assets/projects/calmcompanion/CalmCompanion-1.png";
+import ccImg2 from "../assets/projects/calmcompanion/CalmCompanion-2.png";
 
-import ssImg1 from '../assets/projects/stocksight/StockSight-1.png';
-import ssImg2 from '../assets/projects/stocksight/StockSight-2.png';
+import ssImg1 from "../assets/projects/stocksight/StockSight-1.png";
+import ssImg2 from "../assets/projects/stocksight/StockSight-2.png";
 
-import sbImg1 from '../assets/projects/steadybloom/SteadyBloom1.png';
-import sbImg2 from '../assets/projects/steadybloom/SteadyBloom2.png';
-import sbImg3 from '../assets/projects/steadybloom/SteadyBloom3.png';
-import sbImg4 from '../assets/projects/steadybloom/SteadyBloom4.png';
+import sbImg1 from "../assets/projects/steadybloom/SteadyBloom1.png";
+import sbImg2 from "../assets/projects/steadybloom/SteadyBloom2.png";
+import sbImg3 from "../assets/projects/steadybloom/SteadyBloom3.png";
+import sbImg4 from "../assets/projects/steadybloom/SteadyBloom4.png";
 
 export default function Projects() {
   const projects = [
     {
-      title: 'SteadyBloom',
+      title: "SteadyBloom",
       tagline:
-        'Full-stack ADHD care app combining secure software architecture with real-time mood and medication analytics.',
+        "Full-stack ADHD care app combining secure software architecture with real-time mood and medication analytics.",
       bullets: [
-        'Django REST API with JWT auth powers secure task, mood, and medication tracking.',
-        'Integrated data science: mood trend scoring, sentiment analysis, and D3 word clouds.',
-        'Built with React 18 + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.',
+        "Django REST API with JWT auth powers secure task, mood, and medication tracking.",
+        "Integrated data science: mood trend scoring, sentiment analysis, and D3 word clouds.",
+        "Built with React 18 + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.",
       ],
       tech: [
-        'React',
-        'TypeScript',
-        'Django REST',
-        'PostgreSQL',
-        'JWT Auth',
-        'Recharts',
-        'D3.js',
-        'Pandas',
-        'Tailwind CSS',
-        'AWS RDS',
-        'Render',
-        'Netlify',
+        "React",
+        "TypeScript",
+        "Django REST",
+        "PostgreSQL",
+        "JWT Auth",
+        "Recharts",
+        "D3.js",
+        "Pandas",
+        "Tailwind CSS",
+        "AWS RDS",
+        "Render",
+        "Netlify",
       ],
       images: [sbImg1, sbImg2, sbImg3, sbImg4],
-      LiveDemo: 'https://steadybloom.netlify.app/',
-      accent: 'from-fuchsia-400/70 to-indigo-400/70',
+      LiveDemo: "https://steadybloom.netlify.app/",
+      accent: "from-fuchsia-400/70 to-indigo-400/70",
     },
     {
-      title: 'French Speech Sync',
+      title: "French Speech Sync",
       tagline:
-        'AI tool that converts any MP4 into a fully dubbed French video with synced subtitles.',
+        "AI tool that converts any MP4 into a fully dubbed French video with synced subtitles.",
       bullets: [
-        'Reduced manual dubbing effort by 90% on 50+ videos.',
-        'Whisper → transcription & timestamps; gTTS → French speech.',
-        'MoviePy/ffmpeg merge audio + subtitles into final MP4.',
-        'Outputs stored on AWS S3 with presigned download links.',
+        "Reduced manual dubbing effort by 90% on 50+ videos.",
+        "Whisper → transcription & timestamps; gTTS → French speech.",
+        "MoviePy/ffmpeg merge audio + subtitles into final MP4.",
+        "Outputs stored on AWS S3 with presigned download links.",
       ],
-      tech: ['React', 'FastAPI', 'Whisper', 'gTTS', 'MoviePy', 'AWS S3', 'Docker'],
+      tech: ["React", "FastAPI", "Whisper", "gTTS", "MoviePy", "AWS S3", "Docker"],
       images: [fsImg1, fsImg2],
       videos: [
-        { src: originalVid, label: 'Original video' },
-        { src: translatedVid, label: 'French-dubbed output' },
+        { src: originalVid, label: "Original video" },
+        { src: translatedVid, label: "French-dubbed output" },
       ],
-      github: 'https://github.com/Mrinmayi03/FrenchSpeechSync',
-      accent: 'from-indigo-400/70 to-cyan-400/70',
+      github: "https://github.com/Mrinmayi03/FrenchSpeechSync",
+      accent: "from-indigo-400/70 to-cyan-400/70",
     },
     {
-      title: 'Calm Companion',
-      tagline: 'Voice-enabled mental-health chatbot that responds with empathetic speech.',
+      title: "Calm Companion",
+      tagline:
+        "Voice-enabled mental-health chatbot that responds with empathetic speech.",
       bullets: [
-        '98% STT accuracy via Whisper; ~300ms response latency.',
-        'GPT-3.5-Turbo for conversation logic; ElevenLabs for TTS.',
-        'Built with React 18 + Tailwind and FastAPI backend.',
+        "98% STT accuracy via Whisper; ~300ms response latency.",
+        "GPT-3.5-Turbo for conversation logic; ElevenLabs for TTS.",
+        "Built with React 18 + Tailwind and FastAPI backend.",
       ],
-      tech: ['React', 'FastAPI', 'Whisper', 'GPT-3.5', 'ElevenLabs', 'Tailwind'],
+      tech: ["React", "FastAPI", "Whisper", "GPT-3.5", "ElevenLabs", "Tailwind"],
       images: [ccImg1, ccImg2],
-      github: 'https://github.com/Mrinmayi03/CalmCompanion',
-      accent: 'from-emerald-400/70 to-lime-400/70',
+      github: "https://github.com/Mrinmayi03/CalmCompanion",
+      accent: "from-emerald-400/70 to-lime-400/70",
     },
     {
-      title: 'StockSight',
-      tagline: 'Streamlit dashboard that forecasts stock prices using an LSTM model.',
+      title: "StockSight",
+      tagline: "Streamlit dashboard that forecasts stock prices using an LSTM model.",
       bullets: [
-        'Achieved 92% directional accuracy on S&P 500 validation set.',
-        'Automated yfinance data ingestion & MinMax scaling.',
-        'Interactive moving-average charts and error metrics.',
+        "Achieved 92% directional accuracy on S&P 500 validation set.",
+        "Automated yfinance data ingestion & MinMax scaling.",
+        "Interactive moving-average charts and error metrics.",
       ],
-      tech: ['Python', 'TensorFlow', 'Streamlit', 'yfinance', 'scikit-learn'],
+      tech: ["Python", "TensorFlow", "Streamlit", "yfinance", "scikit-learn"],
       images: [ssImg1, ssImg2],
-      github: 'https://github.com/Mrinmayi03/StockSight',
-      accent: 'from-amber-400/70 to-orange-400/70',
+      github: "https://github.com/Mrinmayi03/StockSight",
+      accent: "from-amber-400/70 to-orange-400/70",
     },
   ];
 
   return (
-    <section id="projects" className="py-24 bg-slate-950 text-slate-100">
+    <section id="projects" className="py-24">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100 mb-10">
           Projects
         </h2>
 
