@@ -13,7 +13,7 @@ const links = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50">
-      <div className="backdrop-blur bg-gray-950/70 border-b border-white/10">
+      <div className="backdrop-blur border-b border-white/10">
         <nav className="mx-auto max-w-6xl px-6">
           <div className="h-14 flex items-center justify-between gap-6">
             {/* Left: Name / Brand */}
