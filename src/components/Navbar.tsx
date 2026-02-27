@@ -7,6 +7,7 @@ const links = [
   { label: 'Skills', href: '#skills' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
+  { label: "Resume", href: "#resume" },
 ];
 
 export default function Navbar() {

@@ -1,4 +1,3 @@
-// src/components/Projects.tsx
 import ProjectCard from "./ProjectCard";
 
 import fsImg1 from "../assets/projects/frenchspeechsync/FrenchSpeechSync-1.png";
@@ -26,7 +25,7 @@ export default function Projects() {
       bullets: [
         "Django REST API with JWT auth powers secure task, mood, and medication tracking.",
         "Integrated data science: mood trend scoring, sentiment analysis, and D3 word clouds.",
-        "Built with React 18 + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.",
+        "Built with React + Tailwind frontend, PostgreSQL on AWS RDS, and fully deployed.",
       ],
       tech: [
         "React",
@@ -67,12 +66,11 @@ export default function Projects() {
     },
     {
       title: "Calm Companion",
-      tagline:
-        "Voice-enabled mental-health chatbot that responds with empathetic speech.",
+      tagline: "Voice-enabled mental-health chatbot that responds with empathetic speech.",
       bullets: [
         "98% STT accuracy via Whisper; ~300ms response latency.",
         "GPT-3.5-Turbo for conversation logic; ElevenLabs for TTS.",
-        "Built with React 18 + Tailwind and FastAPI backend.",
+        "Built with React + Tailwind and FastAPI backend.",
       ],
       tech: ["React", "FastAPI", "Whisper", "GPT-3.5", "ElevenLabs", "Tailwind"],
       images: [ccImg1, ccImg2],
@@ -95,9 +93,9 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-100 mb-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-50 mb-10">
           Projects
         </h2>
 

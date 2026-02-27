@@ -1,4 +1,5 @@
-// src/components/ProjectCard.tsx
+import { useMemo, useState } from "react";
+
 type VideoLink = {
   src: string;
   label: string;
@@ -14,7 +15,7 @@ type Props = {
   videos?: VideoLink[];
   github?: string;
   LiveDemo?: string;
-  accent?: string;
+  accent?: string; // gradient string e.g. "from-indigo-400/70 to-cyan-400/70"
 };
 
 export default function ProjectCard({
@@ -26,64 +27,82 @@ export default function ProjectCard({
   videos,
   github,
   LiveDemo,
-  accent = 'from-indigo-400/60 to-sky-400/60',
+  accent = "from-slate-400/50 to-slate-200/30",
 }: Props) {
-  const imgCount = images.length;
+  const [showAll, setShowAll] = useState(false);
 
-  // Compact heights (specifically reduce 4-image cards)
-  const imgHeight =
-    imgCount >= 4 ? 'h-28 md:h-32' : imgCount === 3 ? 'h-36 md:h-40' : 'h-40 md:h-44';
-
-  const gridCols = imgCount === 1 ? 'grid-cols-1' : 'grid-cols-2';
+  const { primaryImages, extraImages } = useMemo(() => {
+    const primary = images.slice(0, 2);
+    const extra = images.slice(2);
+    return { primaryImages: primary, extraImages: extra };
+  }, [images]);
 
   return (
-    <article className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20 backdrop-blur transition hover:-translate-y-1 hover:border-white/20">
-      <div className={`h-1.5 w-full bg-gradient-to-r ${accent}`} />
+    <div className="group rounded-2xl border border-white/10 bg-white/[0.04] overflow-hidden shadow-lg">
+      {/* Accent top bar */}
+      <div className={`h-1.5 bg-gradient-to-r ${accent}`} />
 
-      {/* Header */}
-      <div className="px-5 pt-5 pb-4">
-        <h3 className="text-xl md:text-2xl font-semibold text-slate-100">
-          {title}
-        </h3>
-        <p className="mt-1 text-sm md:text-base text-slate-300">{tagline}</p>
+      {/* Title ABOVE images */}
+      <div className="p-6 pb-4">
+        <h3 className="text-2xl font-extrabold text-slate-50">{title}</h3>
+        <p className="mt-1 text-slate-300">{tagline}</p>
       </div>
 
-      {/* Images (more compact + no forced rounding inside grid) */}
-      {images?.length > 0 && (
-        <div className={`grid ${gridCols} gap-2 px-5 pb-4`}>
-          {images.slice(0, 4).map((src) => (
-            <div
+      {/* Images */}
+      <div className="px-6">
+        <div className="grid grid-cols-2 gap-2">
+          {primaryImages.map((src) => (
+            <img
               key={src}
-              className="overflow-hidden rounded-xl border border-white/10 bg-slate-900/40"
-            >
-              <img
-                src={src}
-                alt={`${title} screenshot`}
-                className={`${imgHeight} w-full object-cover transition duration-300 group-hover:scale-[1.02]`}
-                loading="lazy"
-              />
-            </div>
+              src={src}
+              alt={`${title} screenshot`}
+              className="w-full aspect-video object-cover rounded-xl border border-white/10"
+              loading="lazy"
+            />
           ))}
         </div>
-      )}
 
-      {/* Content */}
-      <div className="px-5 pb-5">
-        <ul className="mt-1 space-y-2 text-sm md:text-[15px] text-slate-300">
-          {bullets.slice(0, 3).map((b) => (
-            <li key={b} className="flex gap-2">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-500" />
-              <span>{b}</span>
-            </li>
+        {extraImages.length > 0 && (
+          <div className="mt-3">
+            {showAll && (
+              <div className="grid grid-cols-2 gap-2 mt-3">
+                {extraImages.map((src) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt={`${title} screenshot`}
+                    className="w-full aspect-video object-cover rounded-xl border border-white/10"
+                    loading="lazy"
+                  />
+                ))}
+              </div>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setShowAll((v) => !v)}
+              className="mt-3 text-sm font-semibold text-indigo-200 hover:text-indigo-100"
+            >
+              {showAll ? "Show fewer screenshots" : `View ${extraImages.length} more screenshot(s)`}
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Body */}
+      <div className="p-6 pt-5">
+        <ul className="list-disc ml-5 text-slate-200 space-y-2">
+          {bullets.map((b) => (
+            <li key={b}>{b}</li>
           ))}
         </ul>
 
-        {/* Tech chips (slightly tighter) */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tech.slice(0, 12).map((t) => (
+        {/* Tech chips */}
+        <div className="flex flex-wrap gap-2 mt-5">
+          {tech.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-white/10 bg-slate-900/50 px-3 py-1 text-[11px] text-slate-200"
+              className="text-[11px] px-2.5 py-1 rounded-full bg-indigo-500/10 text-indigo-200 border border-indigo-500/20"
             >
               {t}
             </span>
@@ -91,54 +110,55 @@ export default function ProjectCard({
         </div>
 
         {/* Videos */}
-        {videos && (
-          <div className="mt-5 space-y-5">
+        {videos?.length ? (
+          <div className="mt-6 space-y-6">
             {videos.map((v) => (
-              <div key={v.src} className="space-y-2">
-                <p className="text-xs font-semibold text-slate-300">{v.label}</p>
+              <div key={v.src}>
+                <p className="text-xs font-semibold text-slate-300 mb-2">
+                  {v.label}
+                </p>
                 {v.embed ? (
                   <iframe
                     src={v.src}
-                    className="w-full aspect-video rounded-xl border border-white/10"
+                    className="w-full aspect-video rounded-2xl border border-white/10"
                     allow="autoplay"
                   />
                 ) : (
                   <video
                     src={v.src}
                     controls
-                    className="w-full rounded-xl border border-white/10"
+                    className="w-full rounded-2xl border border-white/10"
                   />
                 )}
               </div>
             ))}
           </div>
-        )}
+        ) : null}
 
         {/* Links */}
-        <div className="mt-5 flex flex-wrap gap-3 text-sm">
+        <div className="mt-6 flex flex-wrap gap-4 text-sm">
           {github && (
             <a
               href={github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-lg border border-white/10 bg-slate-900/40 px-3 py-2 text-slate-200 hover:border-white/20 hover:bg-slate-900/60"
+              className="font-semibold text-indigo-200 hover:text-indigo-100"
             >
               GitHub →
             </a>
           )}
-
           {LiveDemo && (
             <a
               href={LiveDemo}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-lg border border-white/10 bg-slate-900/40 px-3 py-2 text-slate-200 hover:border-white/20 hover:bg-slate-900/60"
+              className="font-semibold text-indigo-200 hover:text-indigo-100"
             >
               Live Demo →
             </a>
           )}
         </div>
       </div>
-    </article>
+    </div>
   );
 }
