@@ -6,11 +6,18 @@ type Props = {
   title: string;
   subtitle?: string;
   children: React.ReactNode;
+  className?: string; // ✅ add this
 };
 
-export default function SectionShell({ id, title, subtitle, children }: Props) {
+export default function SectionShell({
+  id,
+  title,
+  subtitle,
+  children,
+  className = "",
+}: Props) {
   return (
-    <section id={id} className="py-20">
+    <section id={id} className={`py-20 ${className}`}>
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-50">
