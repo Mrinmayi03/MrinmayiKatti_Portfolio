@@ -12,21 +12,16 @@ import Resume from './components/Resume';
 export default function App() {
   return (
     <div className="min-h-screen text-slate-900 bg-[#F6F1E8]">
-      {/* Warm neutral background layers (beige/stone) */}
+      {/* Warm professional gradient background */}
       <div className="pointer-events-none fixed inset-0 -z-10">
-        {/* Soft warm gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FBF6EE] via-[#F6F1E8] to-[#EFE7DB]" />
+        {/* Soft beige gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FBF6EE] via-[#F4ECE2] to-[#EDE3D4]" />
 
-        {/* Subtle warm vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_50%_115%,rgba(15,23,42,0.10),transparent_65%)]" />
+        {/* Very subtle depth gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_circle_at_20%_10%,rgba(15,23,42,0.05),transparent_60%)]" />
 
-        {/* Very subtle paper grid */}
-        <div
-          className="absolute inset-0 opacity-[0.06]
-          [background-image:linear-gradient(to_right,rgba(15,23,42,0.06)_1px,transparent_1px),
-          linear-gradient(to_bottom,rgba(15,23,42,0.06)_1px,transparent_1px)]
-          [background-size:72px_72px]"
-        />
+        {/* Soft bottom shadow fade */}
+        <div className="absolute inset-0 bg-[radial-gradient(1000px_circle_at_50%_120%,rgba(0,0,0,0.08),transparent_65%)]" />
       </div>
 
       <Navbar />

@@ -19,7 +19,7 @@ export default function Navbar() {
             {/* Left: Name / Brand */}
             <a
               href="#intro"
-              className="font-semibold tracking-tight text-gray-100 hover:text-white"
+              className="font-semibold tracking-tight text-slate-700 hover:text-slate-600"
             >
               Mrinmayi Katti
             </a>
@@ -30,7 +30,7 @@ export default function Navbar() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="px-3 py-2 text-sm rounded-lg text-gray-200 hover:text-white hover:bg-white/10 transition"
+                  className="px-3 py-2 text-sm rounded-lg text-gray-200 hover:text-slate-600 hover:bg-white/10 transition"
                 >
                   {l.label}
                 </a>

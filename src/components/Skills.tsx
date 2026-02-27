@@ -14,7 +14,7 @@ export default function Skills() {
       <div className="grid gap-10">
         {skillGroups.map((group) => (
           <div key={group.title}>
-            <h3 className="text-lg md:text-xl font-semibold mb-3 text-slate-100/90">
+            <h3 className="text-lg md:text-xl font-semibold mb-3 text-slate-900/90">
               {group.title}
             </h3>
             <div className="flex flex-wrap gap-3">

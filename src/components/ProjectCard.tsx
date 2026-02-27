@@ -44,7 +44,7 @@ export default function ProjectCard({
 
       {/* Title ABOVE images */}
       <div className="p-6 pb-4">
-        <h3 className="text-2xl font-extrabold text-slate-50">{title}</h3>
+        <h3 className="text-2xl font-extrabold text-slate-900">{title}</h3>
         <p className="mt-1 text-slate-300">{tagline}</p>
       </div>
 
@@ -91,7 +91,7 @@ export default function ProjectCard({
 
       {/* Body */}
       <div className="p-6 pt-5">
-        <ul className="list-disc ml-5 text-slate-200 space-y-2">
+        <ul className="list-disc ml-5 text-slate-700 space-y-2">
           {bullets.map((b) => (
             <li key={b}>{b}</li>
           ))}
@@ -114,7 +114,7 @@ export default function ProjectCard({
           <div className="mt-6 space-y-6">
             {videos.map((v) => (
               <div key={v.src}>
-                <p className="text-xs font-semibold text-slate-300 mb-2">
+                <p className="text-xs font-semibold text-slate-600 mb-2">
                   {v.label}
                 </p>
                 {v.embed ? (
