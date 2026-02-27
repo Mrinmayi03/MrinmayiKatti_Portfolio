@@ -1,6 +1,6 @@
 import SectionShell from "./SectionShell";
 
-const RESUME_URL = "/Users/katti/MrinmayiKatti_Portfolio/MrinmayiKatti_Resume_DE.pdf";
+const RESUME_URL = "/Users/katti/MrinmayiKatti_Portfolio/public/MrinmayiKatti_Resume_DE.pdf";
 
 export default function Resume() {
   return (
