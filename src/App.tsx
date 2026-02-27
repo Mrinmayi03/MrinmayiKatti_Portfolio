@@ -11,11 +11,11 @@ import Resume from './components/Resume';
 
 const App: React.FC = () => (
   <div className="min-h-screen text-slate-900">
-    {/* Beige gradient background */}
-    <div className="pointer-events-none fixed inset-0 -z-10 bg-[#f6f1e8]" />
-    <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(900px_circle_at_15%_10%,rgba(30,64,175,0.10),transparent_55%)]" />
-    <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(900px_circle_at_85%_20%,rgba(124,58,237,0.08),transparent_55%)]" />
-    <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(1100px_circle_at_50%_95%,rgba(217,119,6,0.10),transparent_60%)]" />
+    {/* Warm neutral gradient background */}
+    <div className="pointer-events-none fixed inset-0 -z-20 bg-[#f6f1e8]" />
+    <div className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(900px_circle_at_15%_10%,rgba(30,64,175,0.10),transparent_55%)]" />
+    <div className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(900px_circle_at_85%_20%,rgba(124,58,237,0.08),transparent_55%)]" />
+    <div className="pointer-events-none fixed inset-0 -z-20 bg-[radial-gradient(1100px_circle_at_50%_95%,rgba(217,119,6,0.12),transparent_60%)]" />
 
     <Navbar />
 
@@ -28,6 +28,7 @@ const App: React.FC = () => (
       <Certifications />
       <Contact />
       <Resume />
+      <div className="h-16" />
     </main>
   </div>
 );

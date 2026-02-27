@@ -15,9 +15,7 @@ export default function Education() {
           B.S. in Data Science — May 2025 • GPA 3.8 / 4.0
         </p>
 
-        <p className="mt-4 text-slate-600">
-          Dean’s List • Merit Scholarship
-        </p>
+        <p className="mt-4 text-slate-600">Dean’s List • Merit Scholarship</p>
       </div>
     </section>
   );
